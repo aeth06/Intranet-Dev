@@ -1,0 +1,17 @@
+<div>
+	{if segment_1 == "tdec-library"}
+		{exp:channel:entries channel="knowledge_base" limit="1"}
+			<a href="{site_url}">Home</a> &raquo;
+			{exp:gwcode_categories entry_id="{entry_id}" style="linear"}
+				<a href="{path="tdec-library/category/{cat_url_title}"}">{cat_name}</a> &raquo;
+			{/exp:gwcode_categories}
+			{title}
+		{/exp:channel:entries}
+	{if:else}
+		{exp:channel:entries channel="tdec-blog" limit="1"}
+			<a href="{site_url}">Home</a> &raquo;
+			<a href="{site_url}/tdec-blog">Blog</a> &raquo;
+			{blog_short_name}
+		{/exp:channel:entries}
+	{/if}
+</div>
