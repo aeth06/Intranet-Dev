@@ -1,0 +1,20 @@
+{exp:channel:entries channel="tdec-blog" limit="1" require_entry="yes"}
+{if no_results}
+	{redirect="404"}
+{/if}
+{if segment_4 != ""}
+	{redirect="404"}
+{/if}
+
+{embed="includes/.header"}
+{embed="includes/.main_nav"}
+{embed="includes/.breadcrumbs"}
+	<article class="small-16 columns">
+	    <h1>{blog_short_name}</h1>
+	    <small>{entry_date format="%F, %d, %Y"} {author}</small>
+	    {blog_content}
+	</article>
+{embed="includes/.sidecar"}
+{embed="includes/.footer"}
+
+{/exp:channel:entries}

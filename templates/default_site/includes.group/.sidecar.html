@@ -1,0 +1,34 @@
+			<aside class="small-4 columns">
+				{if segment_1 == "tdec-blog"}
+					{!-- If it is a blog post, display other recent posts --}
+					<h3>Other Recent Posts</h3>
+					<ul>
+						{exp:channel:entries channel="tdec-blog" limit="5" dynamic="no"}
+							<li><a href="{title_permalink="tdec-blog/article"}">{blog_short_name}</a></li>
+						{/exp:channel:entries}
+					</ul>				
+				{if:else}
+					{!-- Otherwise --}
+					{exp:channel:entries}
+						{if kb_related_entries}
+						{!-- If there are realted entries, display them --}
+						<h3>Related Entries</h3>
+							<ul>
+								{exp:playa:children field="kb_related_entries"}
+									<li><a href="{path={channel_short_name}/{url_title}}">{title}</a></li>
+								{/exp:playa:children}
+							</ul>
+						{/if}
+						
+						{if kb_related_events}
+						{!-- If there are related events, display them --}
+						<h3>Related Events</h3>
+							<ul>
+								{exp:playa:children field="kb_related_events"}
+									<li><a href="{path={channel_short_name}/{url_title}}">{title}</a></li>
+								{/exp:playa:children}
+							</ul>
+						{/if}
+					{/exp:channel:entries}
+				{/if}
+			</aside>

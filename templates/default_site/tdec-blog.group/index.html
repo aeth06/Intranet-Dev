@@ -1,0 +1,10 @@
+<!-- TDEC Blog Index -->
+{if segment_2 == ""}
+	{embed="tdec-blog/archive"}
+{if:elseif segment_2 == "category"}
+	{embed="tdec-blog/archive"}
+{if:elseif segment_3 != ""}
+	{redirect="404"}
+{if:else}
+	{embed="tdec-blog/article"}
+{/if}

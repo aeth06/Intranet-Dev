@@ -1,0 +1,17 @@
+{embed="includes/.header"}
+{embed="includes/.main_nav"}
+{embed="includes/.breadcrumbs"}
+			{exp:channel:entries channel="knowledge_base" require_entry="yes" limit="1"}
+			<article class="small-16 columns">
+				<h1>{title}</h1>
+				{kb_content}
+				{if kb_files}
+					<h4>Additional Information</h4>
+					{kb_files}
+						<li><a href="{file}">{file_name}</a></li>
+					{/kb_files}
+				{/if}
+			</article>
+			{/exp:channel:entries}
+{embed="includes/.sidecar"}    
+{embed="includes/.footer"}

@@ -1,0 +1,129 @@
+{embed="includes/.header"}
+{embed="includes/.main_nav"}
+
+			<article class="small-20 columns">
+				<section class="row">
+					<h1><a href="#">Volunteers Needed for Urban Runoff 5k</a></h1>
+					<p>The Urban Runoff 5k run begins at the Bicentennial Mall and weaves its way past sever cool and innovative green stormwater management practices. Last year's event was great and we will need your help to make this year's Urban Runoff 5k a success. You can volunteer with event planning, help on the day of the race or run/walk the race.</p>
+					<img src="#" />
+					<button>More</button>
+					<a href="#">View More Articles</a>
+				</section>
+
+				<div class="row">
+					<section class="small-12 columns">
+						<h1><a href="#">Volunteers Needed for Urban Runoff 5k</a></h1>
+						<p>The Urban Runoff 5k run begins at the Bicentennial Mall and weaves its way past sever cool and innovative green stormwater management practices. Last year's event was great and we will need your help to make this year's Urban Runoff 5k a success. You can volunteer with event planning, help on the day of the race or run/walk the race.</p>
+						<img src="#" />
+						<button>More</button>
+						<a href="#">View More Articles</a>
+					</section>
+					
+					<section class="small-12 columns">
+						<h1><a href="#">Volunteers Needed for Urban Runoff 5k</a></h1>
+						<p>The Urban Runoff 5k run begins at the Bicentennial Mall and weaves its way past sever cool and innovative green stormwater management practices. Last year's event was great and we will need your help to make this year's Urban Runoff 5k a success. You can volunteer with event planning, help on the day of the race or run/walk the race.</p>
+						<img src="#" />
+						<button>More</button>
+						<a href="#">View More Articles</a>
+					</section>
+				</div>
+				
+				<div class="row">
+					<section class="small-18 columns">
+						<ul class="small-8 columns"><a href="#">Workplace</a>
+							<li><a href="#">New Employees</a></li>
+							<li><a href="#">Evaluations</a></li>
+							<li><a href="#">Job Plans</a></li>
+							<li><a href="#">Travel/Payroll</a></li>
+							<li><a href="#">Invoicing</a></li>
+							<li><a href="#">Procurement</a></li>
+							<li><a href="#">Customer Service</a></li>
+							<li><a href="#">View Full Section</a></li>
+						</ul>
+						<ul class="small-8 columns"><a href="#">Career &amp; Benefits</a>
+							<li><a href="#">Dual Career Track</a></li>
+							<li><a href="#">Training Opportunities</a></li>
+							<li><a href="#">Retirement</a></li>
+							<li><a href="#">Health Benefits</a></li>
+							<li><a href="#">State Holidays</a></li>
+							<li><a href="#">Leave</a></li>
+							<li><a href="#">Longevity Pay</a></li>
+							<li><a href="#">View Full Section</a></li>
+						</ul>
+						<ul class="small-8 columns"><a href="#">Services</a>
+							<li><a href="#">Help Desk</a></li>
+							<li><a href="#">eTDEC Initiative</a></li>
+							<li><a href="#">I.T. Project List</a></li>
+							<li><a href="#">Web Services</a></li>
+							<li><a href="#">Print Services</a></li>
+							<li><a href="#">View Full Section</a></li>
+						</ul>
+					</section>
+				
+					<section class="small-6 columns">
+						<table>
+							<tr>
+								<td><a href="#">Oct 19</a></td>
+								<td><p><a href="#">Customer Focused Government Customer Service</a></p></td>
+							</tr>
+							
+							<tr>
+								<td><a href="#">Oct 19</a></td>
+								<td><p><a href="#">Competency &amp; Behavior Based Interviewing for Hiring Managers</a></p></td>
+							</tr>
+							
+							<tr>
+								<td><a href="#">Oct 20</a></td>
+								<td><p><a href="#">TN Underground Storage Tank and Solid Waste Disposal Control Board Meeting</a></p></td>
+							</tr>
+							
+							<tr>
+								<td><a href="#">Oct 27</a></td>
+								<td><p><a href="#">Tennessee State Parks Lunch and Learn Series</a></p></td>
+							</tr>
+						</table>
+						<p><a href="#">View Full Calendar</a></p>
+					</section>
+				</div>
+				
+				<section class="row">
+					<h1><a href="#">Customer Focused Government Goals</a></h1><p> &mdash; <a href="#">Learn more about TDEC's CFG Plan</a></p>
+					
+					{exp:channel:entries channel="graphs"}
+					<div class="small-6 columns">
+						<h3>{title}</h3>
+						<p>{cfg_current}% <span>Goal: {cfg_target}%</span></p>
+						<p>Last Month: {last_month}%</p>
+						<canvas id="{url_title}"></canvas>
+					</div>
+					
+					<script>
+						var foo = 100-{cfg_current};
+						
+						var pieData = [
+						  {
+							value: {cfg_current},
+							color:"#5FB18D"
+						  },
+						  {
+							value : foo,
+							color : "#B1D8C6"
+						  }
+
+						];
+						var pieOptions = {
+							percentageInnerCutout : 70,
+							segmentShowStroke : false,
+							showTooltips: false,
+							animationSteps : 200,
+							animationEasing : "linear",
+							responsive : true
+						}
+						var chart = document.getElementById("{url_title}").getContext("2d");
+						new Chart(chart).Pie(pieData, pieOptions);
+					</script>
+					{/exp:channel:entries}
+				</section>
+			</article>
+
+{embed="includes/.footer"}

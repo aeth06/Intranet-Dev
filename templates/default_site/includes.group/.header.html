@@ -1,0 +1,28 @@
+{embed="includes/.head"}
+	<body>{!-- see _includes/_footer --}
+		<header>
+			<hgroup class="logo-area small-8 columns">
+				<a href="{site_url}"><h1 class="main-logo">Tennessee Department of Environment and Conservation</h1></a>
+				<h2 class="subheading">Environment and Conservation <span>Department Intranet</span></h2>
+			</hgroup>
+		
+			<nav class="small-3 small-offset-4 columns">
+				<ul class="quicklinks">
+					<li>Quick Links
+						<ul class="dropmenu quicklinks-drop">
+							<li><a href="http://mail.tn.gov">Webmail</a></li>
+							<li><a href="http://www.edison.tn.gov">Edison</a></li>
+							<li><a href="http://tn.gov/environment">TDEC Homepage</a></li>
+							<li><a href="http://google.com">Google</a></li>
+							{if logged_in}
+								<li><a href="{path='logout'}">Log Out</a></li>
+							{/if}
+							{if logged_out}
+								<li><a href="{path='member/login'}">Log In</a></li>
+							{/if}
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			{embed="includes/.search"}
+		</header>

@@ -1,0 +1,20 @@
+{embed="includes/.header"}
+{embed="includes/.main_nav"}
+{!-- {embed="includes/.breadcrumbs"} --}
+	<article class="small-20 columns">
+	    {exp:channel:entries channel="tdec-blog" limit="20" orderby="date"}
+			{if count == total_results}
+				{!-- If it is the last entry, give it the end class --}
+				<section class="small-5 columns end">
+			{if:else}
+				{!-- Otherwise, don't --}
+				<section class="small-5 columns">
+			{/if}
+				<h3><a href="{title_permalink="tdec-blog/article"}">{blog_short_name}</a></h3>
+				<strong>{author}</strong>
+				<p>{blog_summary}</p>
+				<p><a href="{title_permalink="tdec-blog/article"}">Read More&hellip;</a></p>
+			</section>
+		{/exp:channel:entries}
+	</article>
+{embed="includes/.footer"}

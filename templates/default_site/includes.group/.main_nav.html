@@ -1,0 +1,10 @@
+		<div class="row fullWidth">{!--see _includes/_footer--}
+			<nav class="small-4 columns">
+				<ul>
+					<li><a href="{path="tdec-blog"}">News</a></li>
+					<li><a href="#">Calendar</a></li>
+				</ul>
+				{exp:channel:categories channel="knowledge_base" parent_only="yes"}
+					<a href="{path='tdec-library'}">{category_name}</a>
+				{/exp:channel:categories}
+			</nav>
