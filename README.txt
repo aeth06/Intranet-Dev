@@ -1,1 +1,1 @@
-Hello World!\n
+This is just an experiment with how git, GitHub, and Coda 2 work together. Feel free to ignore this. Seriously, ignore this.
