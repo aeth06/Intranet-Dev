@@ -1,0 +1,12 @@
+{embed="includes/.header"}
+{embed="includes/.main_nav"}
+
+<article class="small-20 columns">
+	{exp:low_search:results query="{segment_3}" limit="10"}
+		<h3><a href="{comment_url_title_auto_path}">{title}</a></h3>
+		<p>{low_search_excerpt}</p>
+		{if no_results}No search results{/if}
+	{/exp:low_search:results}
+</article>
+
+{embed="includes/.footer"}
