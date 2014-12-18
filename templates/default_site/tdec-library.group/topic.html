@@ -2,17 +2,6 @@
 {embed="includes/.main_nav"}
 {!-- {embed="includes/.breadcrumbs"} --}
 
-{!-- Establishing the navigation depth of current category --}
-{exp:stash:set
-	name="my_depth"
-	parse_tags="yes"
-	parse_contitionals="yes"
-}
-	{exp:gwcode_categories cat_url_title="{segment_3}" limit="1" style="linear"}
-		{depth}
-	{/exp:gwcode_categories}
-{/exp:stash:set}
-
 <article class="small-18 small-offset-1 columns">
 {if segment_2 != "category"}
 	{!-- If no category has been selected, display parent categories --}
@@ -20,13 +9,6 @@
 			<a href="{path='tdec-library'}">{category_name}</a>
 			<p>{category_description}</p>
 	{/exp:channel:categories}
-
-{if:elseif {exp:stash:get name="my_depth"} == '1'}
-	{!-- If we are in a parent category, display children--}
-	{exp:gwcode_categories cat_url_title="{segment_3}" incl_self="no"}
-		<a href="{path='tdec-library/category/{cat_url_title}'}">{cat_name}</a>
-		<p>{cat_description}</p>
-	{/exp:gwcode_categories}
 	
 {if:else}
 	{!-- If we are in a child category, display entries --}
